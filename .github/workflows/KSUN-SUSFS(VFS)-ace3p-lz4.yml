@@ -66,9 +66,9 @@ jobs:
          sed -i '$i res=$(echo "$res" | sed '\''s/-dirty//g'\'')' kernel_platform/common/scripts/setlocalversion
          sed -i '$i res=$(echo "$res" | sed '\''s/-dirty//g'\'')' kernel_platform/msm-kernel/scripts/setlocalversion
          sed -i '$i res=$(echo "$res" | sed '\''s/-dirty//g'\'')' kernel_platform/external/dtc/scripts/setlocalversion
-         sed -i '$s|echo "\$res"|echo "\$res-\$(LANG=C TZ='Asia/Shanghai' date +"%a\\ %b\\ %d\\ %T\\ CST\\ %Y")"|' kernel_platform/common/scripts/setlocalversion            
-         sed -i '$s|echo "\$res"|echo "\$res-\$(LANG=C TZ='Asia/Shanghai' date +"%a\\ %b\\ %d\\ %T\\ CST\\ %Y")"|' kernel_platform/msm-kernel/scripts/setlocalversion
-         sed -i '$s|echo "\$res"|echo "\$res-\$(LANG=C TZ='Asia/Shanghai' date +"%a\\ %b\\ %d\\ %T\\ CST\\ %Y")"|' kernel_platform/external/dtc/scripts/setlocalversion
+         sed -i '$s|echo "\$res"|echo "\$res-\$(LANG=C TZ="Asia/Shanghai" date +"%Y%m%d-%H%M%S")"|' kernel_platform/common/scripts/setlocalversion            
+         sed -i '$s|echo "\$res"|echo "\$res-\$(LANG=C TZ="Asia/Shanghai" date +"%Y%m%d-%H%M%S")"|' kernel_platform/msm-kernel/scripts/setlocalversion
+         sed -i '$s|echo "\$res"|echo "\$res-\$(LANG=C TZ="Asia/Shanghai" date +"%Y%m%d-%H%M%S")"|' kernel_platform/external/dtc/scripts/setlocalversion
          
       - name: Set up KernelSU Next
         run: |
